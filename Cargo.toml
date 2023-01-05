@@ -1,10 +1,11 @@
 [package]
-name = "gif_encoder"
+name = "rust-gif-wasm"
 version = "0.1.0"
 edition = "2021"
-authors = ["Your Name <you@example.com>"]
-description = "A sample project with wasm-pack"
-license = "MIT/Apache-2.0"
+# authors = ["Your Name <you@example.com>"]
+author = "lilacs2039"
+description = "WebAssembly GIF converter (callable from TypeScript) built from rust image crate."
+license = "Unlicense"
 repository = "https://github.com/yourgithubusername/hello-wasm"
 
 [lib]

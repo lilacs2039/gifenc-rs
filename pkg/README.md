@@ -12,6 +12,10 @@ https://lilacs2039.github.io/rust-gif-wasm
 
 # Install
 
+```bash
+npm install rust-gif-wasm
+```
+
 
 
 # Usage
@@ -71,20 +75,6 @@ function encode(objectUrl: string) {
 </details>
 
 
-
-# Development
-
-## build
-
-```
-wasm-pack build --target web
-```
-
-## publish
-
-```bash
-npm publish ./pkg
-```
 
 
 
