@@ -111,7 +111,7 @@ function paste_image() {
       </button>
       <iconButton
         caption="Clear"
-        icon="/img/clear.png"
+        icon="img/clear.png"
         @click="setImage(null, '')"
       />
     </div>

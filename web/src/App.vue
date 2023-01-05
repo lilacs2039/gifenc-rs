@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, inject } from "vue";
-import encode_gif_init from "./wasm/gif_encoder";
+import encode_gif_init from "./wasm/gif_encoder"; //"src/wasm/gif_encoder";
 import { encode_gif } from "./wasm/gif_encoder";
 import imageInput from "./components/image-input.vue";
 
