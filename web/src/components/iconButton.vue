@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import { ref, reactive } from "vue";
+// import {URL} from "url";
 
 const props = defineProps({
  caption:String, //"no caption",
  icon:String, //"@/assets/img/download.png",
 });
 
+function iconUrl(a:string){
+  return new URL(a, import.meta.url).href
+}
+
 </script>
 
 <template>
   <button class="icon-button shadow">
-    <img :src="icon" />
+    <!-- <img :src="new URL(icon, import.meta.url).href" /> -->
+    <img :src="iconUrl(icon)" />
     <div class="mask">{{caption}}</div>
   </button>
 </template>

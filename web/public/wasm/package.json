@@ -1,0 +1,21 @@
+{
+  "name": "gif_encoder",
+  "collaborators": [
+    "Your Name <you@example.com>"
+  ],
+  "description": "A sample project with wasm-pack",
+  "version": "0.1.0",
+  "license": "MIT/Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourgithubusername/hello-wasm"
+  },
+  "files": [
+    "gif_encoder_bg.wasm",
+    "gif_encoder.js",
+    "gif_encoder.d.ts"
+  ],
+  "module": "gif_encoder.js",
+  "types": "gif_encoder.d.ts",
+  "sideEffects": false
+}
