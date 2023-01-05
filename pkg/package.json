@@ -1,0 +1,22 @@
+{
+  "name": "rust-gif-wasm",
+  "collaborators": [
+    "Your Name <you@example.com>"
+  ],
+  "description": "WebAssembly GIF converter (callable from TypeScript) built from rust image crate.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourgithubusername/hello-wasm"
+  },
+  "files": [
+    "gif_encoder_bg.wasm",
+    "gif_encoder.js",
+    "gif_encoder.d.ts"
+  ],
+  "module": "gif_encoder.js",
+  "types": "gif_encoder.d.ts",
+  "sideEffects": false,
+  "author": "lilacs2039",
+  "license": "Unlicense"
+}
