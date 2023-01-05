@@ -7,8 +7,8 @@ const props = defineProps({
  icon:String, //"@/assets/img/download.png",
 });
 
-function iconUrl(a:string){
-  return new URL(a, window.location.href).href
+function iconUrl(relativePath:string){
+  return new URL(relativePath, window.location.href).href
 }
 
 </script>
