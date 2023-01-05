@@ -72,20 +72,6 @@ function encode(objectUrl: string) {
 
 
 
-# Development
-
-## build
-
-```
-wasm-pack build --target web
-```
-
-## publish
-
-```bash
-npm publish ./pkg
-```
-
 
 
 

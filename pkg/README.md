@@ -12,10 +12,6 @@ https://lilacs2039.github.io/rust-gif-wasm
 
 # Install
 
-```bash
-npm install rust-gif-wasm
-```
-
 
 
 # Usage
