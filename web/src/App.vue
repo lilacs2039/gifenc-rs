@@ -11,8 +11,8 @@ const post_thumb_mes = ref("");
 // init wasm
 encode_gif_init("wasm/gif_encoder_bg.wasm");
 
-function encode(objectUrl: string) {
-  const bin = window.atob(objectUrl.replace(/.+,/, ""));
+function encode(dataURL: string) {
+  const bin = window.atob(dataURL.replace(/.+,/, ""));
   var buffer = new Uint8Array(bin.length);
   for (var i = 0; i < bin.length; i++) {
     buffer[i] = bin.charCodeAt(i);
@@ -47,7 +47,7 @@ function encode(objectUrl: string) {
     </div>
     <pre></pre>
     <h2>1. Input Image</h2>
-    <imageInput @onChanged="(url) => encode(url)" />
+    <imageInput @onChanged="(dataURL) => encode(dataURL)" />
     <pre></pre>
     <h2>2. Converted GIF Image</h2>
     <div>{{ post_thumb_mes }}</div>

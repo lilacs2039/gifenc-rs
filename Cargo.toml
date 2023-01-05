@@ -1,5 +1,5 @@
 [package]
-name = "rust-gif-wasm"
+name = "gifenc-rs"
 version = "0.1.0"
 edition = "2021"
 # authors = ["Your Name <you@example.com>"]
@@ -14,3 +14,8 @@ crate-type = ["cdylib"]
 [dependencies]
 wasm-bindgen = "0.2"
 image = "0.24.5"
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1

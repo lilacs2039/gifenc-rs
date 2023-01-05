@@ -1,5 +1,5 @@
 {
-  "name": "rust-gif-wasm",
+  "name": "gifenc-rs",
   "version": "0.1.0",
   "description": "WebAssembly GIF converter (callable from TypeScript) built from rust image crate.",
   "scripts": {
@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "copy": "robocopy /e ./dist ./docs"
+    "copy": "robocopy /e ./dist ../docs"
   },
   "dependencies": {
     "mediancut": "^2.1.0",

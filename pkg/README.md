@@ -1,4 +1,4 @@
-# rust-gif-wasm
+# gifenc-rs
 
 WebAssembly GIF converter (callable from TypeScript) built from rust image crate.
 
@@ -10,7 +10,19 @@ https://lilacs2039.github.io/rust-gif-wasm
 
 
 
+# npm
+
+https://www.npmjs.com/package/rust-gif-wasm
+
+
+
 # Install
+
+```bash
+npm install gifenc-rs
+```
+
+
 
 
 
@@ -20,11 +32,11 @@ https://lilacs2039.github.io/rust-gif-wasm
 
 ```vue
 <script setup lang="ts">
-import encode_gif_init from "./wasm/gif_encoder";
-import { encode_gif } from "./wasm/gif_encoder";
+import encode_gif_init from "gifenc-rs";
+import { encode_gif } from "gifenc-rs";
     
 // init wasm
-encode_gif_init("wasm/gif_encoder_bg.wasm")
+encode_gif_init("wasm/gifenc-rs_bg.wasm")
 
 // ...
 // convert
@@ -35,6 +47,7 @@ const buf: Uint8Array = encode_gif(buffer as Uint8Array);
 
 <details>
 proper example
+
 
 ```vue
 <script setup lang="ts">
@@ -68,9 +81,26 @@ function encode(objectUrl: string) {
 
 <template></template>
 ```
+
 </details>
 
 
+
+# Development
+
+## Build
+
+```bash
+wasm-pack build --target web
+```
+
+
+
+## publish
+
+```bash
+npm publish ./pkg
+```
 
 
 

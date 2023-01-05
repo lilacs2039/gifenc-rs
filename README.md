@@ -1,4 +1,4 @@
-# rust-gif-wasm
+# gifenc-rs
 
 WebAssembly GIF converter (callable from TypeScript) built from rust image crate.
 
@@ -10,21 +10,39 @@ https://lilacs2039.github.io/rust-gif-wasm
 
 
 
+# npm
+
+https://www.npmjs.com/package/rust-gif-wasm
+
+
+
 # Install
+
+```bash
+npm install gifenc-rs
+```
+
+
 
 
 
 # Usage
 
+## 1. Copy `*_bg.wasm`
 
+Copy `*_bg.wasm` from `node_modules/gifenc-rs/*` to `./assets/*`.
+
+
+
+## 2. import&call function
 
 ```vue
 <script setup lang="ts">
-import encode_gif_init from "./wasm/gif_encoder";
-import { encode_gif } from "./wasm/gif_encoder";
+import gif_wasm_init, { encode_gif } from "gifenc-rs";
+import gif_wasm_module from "./assets/gifenc_rs_bg.wasm?url";
     
 // init wasm
-encode_gif_init("wasm/gif_encoder_bg.wasm")
+gif_wasm_init(gif_wasm_module)
 
 // ...
 // convert
@@ -36,16 +54,17 @@ const buf: Uint8Array = encode_gif(buffer as Uint8Array);
 <details>
 proper example
 
+
 ```vue
 <script setup lang="ts">
-import encode_gif_init from "./wasm/gif_encoder";
-import { encode_gif } from "./wasm/gif_encoder";
-
+import gif_wasm_init, { encode_gif } from "gifenc-rs";
+import gif_wasm_module from "./assets/gifenc_rs_bg.wasm?url";
+    
 // init wasm
-encode_gif_init("wasm/gif_encoder_bg.wasm")
+gif_wasm_init(gif_wasm_module)
 
-function encode(objectUrl: string) {
-  const bin = window.atob(objectUrl.replace(/.+,/, ""));
+function encode(dataURL: string) {
+  const bin = window.atob(dataURL.replace(/.+,/, ""));
   var buffer = new Uint8Array(bin.length);
   for (var i = 0; i < bin.length; i++) {
     buffer[i] = bin.charCodeAt(i);
@@ -68,9 +87,26 @@ function encode(objectUrl: string) {
 
 <template></template>
 ```
+
 </details>
 
 
+
+# Development
+
+## Build
+
+```bash
+wasm-pack build --target web
+```
+
+
+
+## publish
+
+```bash
+npm publish ./pkg
+```
 
 
 
