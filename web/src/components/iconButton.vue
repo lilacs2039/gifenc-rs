@@ -8,7 +8,7 @@ const props = defineProps({
 });
 
 function iconUrl(a:string){
-  return new URL(a, import.meta.url).href
+  return new URL(a, window.location.href).href
 }
 
 </script>
