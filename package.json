@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "copy": "robocopy /e ./dist ../docs"
+    "copy": "robocopy /e ./dist ./docs"
   },
   "dependencies": {
     "mediancut": "^2.1.0",

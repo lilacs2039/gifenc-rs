@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, reactive, inject } from "vue";
-import encode_gif_init from "./wasm/gif_encoder"; //"src/wasm/gif_encoder";
+import encode_gif_init from "./wasm/gif_encoder";
 import { encode_gif } from "./wasm/gif_encoder";
 import imageInput from "./components/image-input.vue";
 
@@ -8,17 +8,17 @@ const inputB64 = ref("");
 const url = ref("");
 const post_thumb_mes = ref("");
 
-// wasm初期化
-encode_gif_init("wasm/gif_encoder_bg.wasm")
+// init wasm
+encode_gif_init("wasm/gif_encoder_bg.wasm");
 
-function encode(objectUrl:string){
-  const bin = window.atob(objectUrl.replace(/.+,/,""));
+function encode(objectUrl: string) {
+  const bin = window.atob(objectUrl.replace(/.+,/, ""));
   var buffer = new Uint8Array(bin.length);
   for (var i = 0; i < bin.length; i++) {
     buffer[i] = bin.charCodeAt(i);
   }
-  const buf = encode_gif(buffer);
-  // Blobを作成
+  const buf: Uint8Array = encode_gif(buffer as Uint8Array);
+  // Convert to Blob
   try {
     var blob = new Blob([buf], {
       type: "image/gif",
@@ -45,10 +45,10 @@ function encode(objectUrl:string){
         height="125"
       />
     </div>
-    <pre> </pre>
+    <pre></pre>
     <h2>1. Input Image</h2>
-    <imageInput @onChanged="url => encode(url)" />
-      <pre> </pre>
+    <imageInput @onChanged="(url) => encode(url)" />
+    <pre></pre>
     <h2>2. Converted GIF Image</h2>
     <div>{{ post_thumb_mes }}</div>
     <img :src="url" />
@@ -56,5 +56,4 @@ function encode(objectUrl:string){
 </template>
 
 <style scoped>
-
 </style>
